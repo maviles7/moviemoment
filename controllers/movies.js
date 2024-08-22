@@ -32,7 +32,7 @@ router.post('/', ensureLoggedIn, async (req, res) => {
 
 // GET /movies/:movieId --> SHOW FUNCTIONALITY 
 router.get('/:movieId', ensureLoggedIn, async (req, res) => {
-  //const movie = Movie
+  const movie = await Movie.findById(req.params.movieId);
   res.render('movies/show.ejs', { movie });
 });
 
