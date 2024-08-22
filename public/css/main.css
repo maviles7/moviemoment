@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color: rgb(245, 106, 134);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -11,7 +13,7 @@ body {
 }
 
 nav, footer {
-  background-color:lightblue;
+  background-color: rgb(245, 106, 134);
   display: flex;
   justify-content: space-between;
   align-items: center;

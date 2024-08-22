@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Add Movie</h1>
+
+<form>
+
+    <label for="movie-title">Movie Title:</label>
+    <input type="text" name="movieTitle" id="movie-title"/>
+
+    <label for="date-watched">Date Watched:</label>
+    <input type="text" name="dateWatched" id="date-watched"/>
+
+    <label for="genre">Genre:</label>
+    <select name="genre" id="genre">
+        <option></option>
+    </select>
+
+    <label for="review">Review:</label>
+    <textarea name="review" id="review"></textarea>
+</form>
+
+<%- include('../partials/footer.ejs') %>
+
