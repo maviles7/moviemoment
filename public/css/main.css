@@ -63,3 +63,7 @@ button:hover {
   background-color: lightslategray;
   color: white;
 }
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}

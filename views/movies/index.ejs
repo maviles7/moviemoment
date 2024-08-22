@@ -5,7 +5,9 @@
 <% if (movies.length) { %>
     <ul>
         <% movies.forEach((movie) => { %>
-            <li><%= movie.movieTitle %></li>
+            <li>
+                <a href="/movies/<%= movie._id %>"><%= movie.movieTitle %></a>
+            </li>
         <% })%>
     </ul>
     <% } else { %>

@@ -14,7 +14,26 @@ router.get('/', ensureLoggedIn, async (req, res) => {
 
 // GET /movies/new --> NEW FUNCTIONALITY 
 router.get('/new', ensureLoggedIn, (req, res) => {
-  res.render('movies/new.ejs');
+  const genres = Movie.schema.path('genre').enumValues
+  const ratings = Movie.schema.path('rating').enumValues
+  res.render('movies/new.ejs', { genres, ratings });
+});
+
+// POST /movies --> CREATE FUNCTIONALITY 
+router.post('/', ensureLoggedIn, async (req, res) => {
+  try {
+    req.body.dateWatched += 'T00:00'; // prevent 1 day off error 
+    await Movie.create(req.body);
+  } catch (error) {
+    console.log(error);
+  }
+  res.redirect('/movies');
+});
+
+// GET /movies/:movieId --> SHOW FUNCTIONALITY 
+router.get('/:movieId', ensureLoggedIn, async (req, res) => {
+  //const movie = Movie
+  res.render('movies/show.ejs', { movie });
 });
 
 module.exports = router;

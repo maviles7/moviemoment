@@ -14,8 +14,8 @@ const movieSchema = new Schema ({
         enum: ['action', 'adenture', 'animated', 'comedy', 'drama', 'documentary', 'historical', 'horror', 'musical', 'romance', 'thriller']
     }, 
     rating: {
-        type: Number, 
-        enum: ['1', '2', '3', '4', '5'],
+        type: String, 
+        enum: ['⭐️', '⭐️⭐️', '⭐️⭐️⭐️', '⭐️⭐️⭐️⭐️', '⭐️⭐️⭐️⭐️⭐️'],
         required: true,
     },
     review: {

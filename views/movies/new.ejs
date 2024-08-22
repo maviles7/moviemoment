@@ -2,21 +2,32 @@
 
 <h1>Add Movie</h1>
 
-<form>
+<form action="/movies" method="POST">
 
     <label for="movie-title">Movie Title:</label>
     <input type="text" name="movieTitle" id="movie-title"/>
 
     <label for="date-watched">Date Watched:</label>
-    <input type="text" name="dateWatched" id="date-watched"/>
+    <input type="date" name="dateWatched" id="date-watched"/>
 
     <label for="genre">Genre:</label>
     <select name="genre" id="genre">
-        <option></option>
+        <% genres.forEach((genre) => { %>
+            <option value="<%= genre %>"><%= genre %></option>
+        <% }) %>
+    </select>
+
+    <label for="rating">Rating:</label>
+    <select name="rating">
+        <% ratings.forEach((rating) => { %>
+            <option value="<%= rating %>"><%= rating %></option>
+        <% }) %>
     </select>
 
     <label for="review">Review:</label>
     <textarea name="review" id="review"></textarea>
+
+    <button type="submit">Add Movie!</button>
 </form>
 
 <%- include('../partials/footer.ejs') %>

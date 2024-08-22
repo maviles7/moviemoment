@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+
+<!-- SHOW  -->
+<h1><%= movie.movieTitle ></h1>
+    <h3>my rating: <%= movie.rating %></h3>
+        <ul>
+            <% if (movie.dateWatched) { %>
+                <li><%= movie.dateWatched %></li>
+            <% } %>
+            <% if (movie.genre) { %>
+                <li><%= movie.genre></li>
+            <% } %>
+            <% if (movie.review) { %>
+                <li><%= movie.review %></li>
+            <% } %>
+        </ul>
+
+<!-- EDIT -->
+
+<!-- DELETE -->
+
+<%- include('../partials/footer.ejs') %>
+
