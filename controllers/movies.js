@@ -56,10 +56,8 @@ router.delete('/:movieId', async (req, res) => {
 
 // UPDATE /movies/:movieId --> UPDATE FUNCTIONALITY 
 router.put('/:movieId', async (req, res) => {
-  const movie =  await Movie.findById(req.params.movieId);
-  movie.set(req.body);
-  await req.user.save();
-  res.redirect(`/movies/${movie._id}`);
+  const updateMovie = await Movie.findByIdAndUpdate({_id: req.params.movieId}, req.body, {new: true});
+  res.redirect(`/movies/${updateMovie._id}`);
 });
 
 module.exports = router;
