@@ -41,7 +41,7 @@ const ensureLoggedIn = require('./middleware/ensureLoggedIn');
 // '/auth' is a "starts with" path that all paths
 // within authCtrl are appended to
 app.use('/auth', require('./controllers/auth'));
-app.use('/movies', require('./controllers/movies'));
+app.use('/movies', ensureLoggedIn, require('./controllers/movies'));
 // If you wanted to protect ALL routes 
 // app.use('/todos', ensureLoggedIn, require('./controllers/todos'));
 

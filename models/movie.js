@@ -20,7 +20,13 @@ const movieSchema = new Schema ({
     },
     review: {
         type: String,
-    }
+    }, 
+    viewer: {
+        // referenceing the User
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true, 
+    },
 });
 
 module.exports = mongoose.model('Movie', movieSchema);
