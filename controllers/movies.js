@@ -8,7 +8,7 @@ const Movie = require('../models/movie');
 
 // GET /movies --> INDEX FUNCTIONALITY
 router.get('/', ensureLoggedIn, async (req, res) => {
-  const movies = await Movie.find({}).populate('viewer');
+  const movies = await Movie.find({viewer: req.user._id}).populate('viewer');
   console.log('movie:', movies)
   res.render('movies/index.ejs', { movies });
 });
@@ -23,9 +23,9 @@ router.get('/new', ensureLoggedIn, (req, res) => {
 // POST /movies --> CREATE FUNCTIONALITY 
 router.post('/', async (req, res) => {
   try {
+    req.body.dateWatched += 'T00:00'; // prevent 1 day off error  --- Q: why does code break w/o this?
     req.body.viewer = req.user._id;
-    console.log(req.body.viewer);
-    req.body.dateWatched += 'T00:00'; // prevent 1 day off error  
+    console.log('viewer:', req.body.viewer);
     await Movie.create(req.body);
   } catch (error) {
     console.log(error);
@@ -33,14 +33,14 @@ router.post('/', async (req, res) => {
   res.redirect('/movies');
 });
 
-// // GET /movies/:movieId --> SHOW FUNCTIONALITY 
-// router.get('/:movieId', async (req, res) => {
-//   const movie = await Movie.findById(req.params.movieId);
-//   res.render('movies/show.ejs', { movie });
-// });
+// GET /movies/:movieId --> SHOW FUNCTIONALITY 
+router.get('/:movieId', async (req, res) => {
+  const movie = await Movie.findById(req.params.movieId);
+  res.render('movies/show.ejs', { movie });
+});
 
 // DELETE /movies/:movieId --> DELETE FUNCTIONALITY 
-// router.delete('/:movieId', async (req, res) => {
-// });
+  router.delete('/:movieId', async (req, res) => {
+});
 
 module.exports = router;
