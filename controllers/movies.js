@@ -9,7 +9,6 @@ const Movie = require('../models/movie');
 // GET /movies --> INDEX FUNCTIONALITY
 router.get('/', ensureLoggedIn, async (req, res) => {
   const movies = await Movie.find({viewer: req.user._id}).populate('viewer');
-  console.log('movie:', movies)
   res.render('movies/index.ejs', { movies });
 });
 
@@ -25,7 +24,6 @@ router.post('/', async (req, res) => {
   try {
     req.body.dateWatched += 'T00:00'; // prevent 1 day off error  --- Q: why does code break w/o this?
     req.body.viewer = req.user._id;
-    console.log('viewer:', req.body.viewer);
     await Movie.create(req.body);
   } catch (error) {
     console.log(error);
@@ -40,7 +38,9 @@ router.get('/:movieId', async (req, res) => {
 });
 
 // DELETE /movies/:movieId --> DELETE FUNCTIONALITY 
-  router.delete('/:movieId', async (req, res) => {
+router.delete('/:movieId', async (req, res) => {
+  await Movie.findByIdAndDelete(req.params.movieId);
+  res.redirect('/');
 });
 
 module.exports = router;
