@@ -19,6 +19,21 @@ router.get('/new', ensureLoggedIn, (req, res) => {
   res.render('movies/new.ejs', { genres, ratings });
 });
 
+// GET /movies/:movieId --> SHOW FUNCTIONALITY 
+router.get('/:movieId', async (req, res) => {
+  const movie = await Movie.findById(req.params.movieId);
+  res.render('movies/show.ejs', { movie });
+});
+
+// GET /movies/:movieID/edit --> EDIT FUNCTIONALITY
+router.get('/:movieId/edit', async (req, res) => {
+  const movie = await Movie.find({_id: req.params.movieId});
+  const genres = Movie.schema.path('genre').enumValues
+  const ratings = Movie.schema.path('rating').enumValues
+  console.log(movie)
+  res.render('movies/edit.ejs', { movie, genres, ratings });
+});
+
 // POST /movies --> CREATE FUNCTIONALITY 
 router.post('/', async (req, res) => {
   try {
@@ -31,16 +46,12 @@ router.post('/', async (req, res) => {
   res.redirect('/movies');
 });
 
-// GET /movies/:movieId --> SHOW FUNCTIONALITY 
-router.get('/:movieId', async (req, res) => {
-  const movie = await Movie.findById(req.params.movieId);
-  res.render('movies/show.ejs', { movie });
-});
 
 // DELETE /movies/:movieId --> DELETE FUNCTIONALITY 
 router.delete('/:movieId', async (req, res) => {
   await Movie.findByIdAndDelete(req.params.movieId);
   res.redirect('/');
 });
+
 
 module.exports = router;
