@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-<h1>Edit Movie</h1>
+<h1>Edit Movie: <%= movie.movieTitle %></h1>
 
 <form action="/movies/<%= movie._id %>?_method=PUT" method="POST">
 
@@ -8,10 +8,11 @@
     <input type="text" name="movieTitle" id="movie-title" value="<%= movie.movieTitle %>"/>
 
     <label for="date-watched">Date Watched:</label>
-    <input type="date" name="dateWatched" id="date-watched" value="<%= movie.dateWatched %>"/>
+    <input type="date" name="dateWatched" id="date-watched" value="<%= dateWatched %>"/>
 
     <label for="genre">Genre:</label>
     <select name="genre" id="genre">
+        <option value="<%= movie.genre %> selected"><%= movie.genre %></option>
         <% genres.forEach((genre) => { %>
             <option value="<%= genre %>"><%= genre %></option>
         <% }) %>
@@ -19,8 +20,9 @@
 
     <label for="rating">Rating:</label>
     <select name="rating">
+        <option value="<%= movie.rating %>" selected><%= movie.rating %></option>
         <% ratings.forEach((rating) => { %>
-            <option value="<%= rating %>"><%= rating %></option>
+            <option value="<%= rating %>"><%=rating %></option>
         <% }) %>
     </select>
 
