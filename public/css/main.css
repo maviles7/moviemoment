@@ -16,6 +16,7 @@ body {
 
 .fancyfont {
   font-family: 'Monoton';
+  text-shadow: 2px 2px 2px goldenrod;
 }
 
 a {
