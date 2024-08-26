@@ -15,7 +15,7 @@ const movieSchema = new Schema ({
     }, 
     rating: {
         type: String, 
-        enum: ['⭐️', '⭐️⭐️', '⭐️⭐️⭐️', '⭐️⭐️⭐️⭐️', '⭐️⭐️⭐️⭐️⭐️'],
+        enum: ['✰', '✰✰', '✰✰✰', '✰✰✰✰', '✰✰✰✰✰'],
         required: true,
     },
     review: {

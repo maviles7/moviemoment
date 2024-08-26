@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
 <!-- SHOW  -->
-<h1><%= movie.movieTitle %></h1>
+<h1 class="fancyfont"><%= movie.movieTitle %></h1>
     <h3>my rating: <%= movie.rating %></h3>
         <ul>
             <% if (movie.dateWatched) { %>
@@ -16,12 +16,12 @@
         </ul>
 
 <!-- EDIT -->
-<a href="/movies/<%= movie._id %>/edit">Edit Movie</a>
+<a href="/movies/<%= movie._id %>/edit" class="fancyfont">Edit Movie</a>
 
 
 <!-- DELETE -->
  <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
-    <button>delete movie.</button>
+    <button class="fancyfont">delete movie.</button>
  </form>
 
 <%- include('../partials/footer.ejs') %>

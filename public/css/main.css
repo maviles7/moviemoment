@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300&family=Monoton&display=swap');
+
 * {
   box-sizing: border-box;
   background-color: white;
-  color: rgb(245, 106, 134);
-  font-family: 'Times New Roman', Times, serif;
+  color: rgb(204, 67, 67);
+  font-family: 'Moderustic';
 }
 
 body {
@@ -12,32 +14,40 @@ body {
   grid-template-rows: 8vh 1fr 4vh;
 }
 
+.fancyfont {
+  font-family: 'Monoton';
+}
+
+.lplinks {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+
 nav, footer {
-  background-color: rgb(245, 106, 134);
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2vmin;
   font-size: 2vh;
-  color: lightslategray;
+  color: rgb(204, 67, 67);
 }
 
 nav a {
   text-decoration: none;
-  color: slategray;
-  background-color: white;
+  color: rgb(204, 67, 67);
   padding: 1vmin;
   border-radius: 1vmin;
   &:hover {
-    color: gray;
-    background-color: lightslategray;
+    background-color: rgb(204, 67, 67);
     color: white;
   }
 }
 
 nav span {
   font-size: 1.5vmin;
-  color: lightslategray;
+  color: rgb(204, 67, 67);
 }
 
 main {
@@ -45,6 +55,10 @@ main {
   flex-direction: column;
   align-items: center;
   margin-top: 5vmin;
+}
+
+input, select, textarea {
+  border-color: rgb(204, 67, 67);
 }
 
 form {
@@ -59,11 +73,17 @@ form * {
   border-radius: 1vmin;
 }
 
+button {
+  color: white;
+  background-color: rgb(204, 67, 67);
+  border-color: rgb(204, 67, 67);
+}
 button:hover {
-  background-color: lightslategray;
+  background-color: rgb(204, 67, 67);
+  border-color: rgb(204, 67, 67);
   color: white;
 }
 
 ::-webkit-calendar-picker-indicator {
-  filter: invert(1);
+  color: rgb(204, 67, 67);
 }

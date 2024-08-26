@@ -8,18 +8,19 @@
 </head>
 <body>
   <nav>
-    <!-- Put links that you want to display at all times outside of the if/else -->
     <div>
       <% if (user) { %>
-        <a href="/movies">My Movies</a>
-        <a href="/movies/new">Add Movie</a>
-        <a href="/auth/logout">LOG OUT</a>&nbsp;&nbsp;
-        <span>Wecome, <%= user.username %></span>
+        <div>
+          <a href="/movies" class ="fancyfont">My Movies</a>
+          <a href="/movies/new" class ="fancyfont">Add Movie</a>
+          <span><%= user.username %></span>
+          <a href="/auth/logout" class ="fancyfont">LOG OUT</a>
+        </div>
       <% } else { %>
-        <a href="/auth/sign-up">SIGN UP</a>
-        <a href="/auth/login">LOG IN</a>
+        <a href="/auth/sign-up" class ="fancyfont">SIGN UP</a>
+        <a href="/auth/login" class ="fancyfont">LOG IN</a>
       <% } %>
-      </div>
+    </div>
   </nav>
   <main>
 
