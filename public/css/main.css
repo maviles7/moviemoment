@@ -18,14 +18,25 @@ body {
   font-family: 'Monoton';
 }
 
-.lplinks {
+a {
   text-decoration: none;
-  display: flex;
-  justify-content: space-between;
+  padding: 1vmin;
+  border-radius: 1vmin;
+  &:hover {
+    background-color: rgb(204, 67, 67);
+    color: white;
+}
 }
 
-nav, footer {
-  background-color: white;
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5vh;
+  color: rgb(204, 67, 67);
+}
+
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,20 +45,13 @@ nav, footer {
   color: rgb(204, 67, 67);
 }
 
-nav a {
-  text-decoration: none;
-  color: rgb(204, 67, 67);
-  padding: 1vmin;
-  border-radius: 1vmin;
-  &:hover {
-    background-color: rgb(204, 67, 67);
-    color: white;
-  }
-}
-
 nav span {
   font-size: 1.5vmin;
   color: rgb(204, 67, 67);
+}
+
+#logout {
+  flex-wrap: wrap;
 }
 
 main {
@@ -57,8 +61,20 @@ main {
   margin-top: 5vmin;
 }
 
+li {
+  padding: 1.5vh;
+}
+
 input, select, textarea {
   border-color: rgb(204, 67, 67);
+}
+
+.showpage {
+  display: flex;
+}
+
+#edit {
+  margin-right: 3vh;
 }
 
 form {
@@ -82,6 +98,10 @@ button:hover {
   background-color: rgb(204, 67, 67);
   border-color: rgb(204, 67, 67);
   color: white;
+}
+
+form > button[type="submit"] {
+  grid-column: 2;
 }
 
 ::-webkit-calendar-picker-indicator {
