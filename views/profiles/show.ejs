@@ -3,14 +3,19 @@
 
 <h1 class="fancyfont"><%= user.username %>'s watchlist:</h1>
 
-<ul>
-    <% movies.forEach((movie) => { %>
-        <li>
-            <%= movie.movieTitle %>
-        </li>
-    <% })%>
-</ul>
+<% if (movies.length) { %>
+    <ul>
+        <% movies.forEach((movie) => { %>
+            <li>
+                <%= movie.movieTitle %>
+            </li>
+        <% })%>
+    </ul>
+<% } else { %>
+    <p>no movies watched, yet.</p>
+<% } %>
 
-   
 
 <%- include('../partials/footer.ejs') %>
+
+   
