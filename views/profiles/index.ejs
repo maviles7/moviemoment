@@ -2,5 +2,13 @@
 
 <h1 class="fancyfont">who is watching what</h1>
 
+<ul>
+    <% profiles.forEach((profile) => { %>
+        <li>
+            <%= profile.username %></a>
+        </li>
+    <% })%>
+</ul>
+
 <%- include('../partials/footer.ejs') %>
 
