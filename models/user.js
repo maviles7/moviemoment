@@ -3,10 +3,15 @@ const mongoose = require("mongoose");
 const Movie = require('./movie')
 
 const userSchema = new mongoose.Schema({
-  username: {
+  email: {
     type: String,
     required: true,
     unique: true
+  },
+  username: {
+    type: String, 
+    required: true, 
+    unique: true,
   },
   password: {
     type: String,
