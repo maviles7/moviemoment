@@ -5,13 +5,13 @@
     <h3>my rating: <%= movie.rating %></h3>
         <ul>
             <% if (movie.dateWatched) { %>
-                <li>date watched → <%= movie.dateWatched.toLocaleDateString() %></li>
+                <li><span class="bold">date watched → </span><%= movie.dateWatched.toLocaleDateString() %></li>
             <% } %>
             <% if (movie.genre) { %>
-                <li>genre → <%= movie.genre %></li>
+                <li><span class="bold">genre → </span><%= movie.genre %></li>
             <% } %>
             <% if (movie.review) { %>
-                <li>my review → <%= movie.review %></li>
+                <li><span class="bold">my review → </span><%= movie.review %></li>
             <% } %>
         </ul>
 

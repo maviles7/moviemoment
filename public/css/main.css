@@ -19,6 +19,10 @@ body {
   text-shadow: 2px 2px 2px goldenrod;
 }
 
+.bold {
+  font-weight: 900;
+}
+
 a {
   text-decoration: none;
   padding: 1vmin;
