@@ -2,14 +2,16 @@
 
 <h1 class="fancyfont">My Movies</h1>
 
+
+
 <% if (movies.length) { %>
-    <ul>
+    
         <% movies.forEach((movie) => { %>
-            <li>
+            <p>
                 <a href="/movies/<%= movie._id %>"><%= movie.movieTitle %></a>
-            </li>
+            </p>
         <% })%>
-    </ul>
+    
     <% } else { %>
         <p>no movies watched, yet.</p>
     <% } %>

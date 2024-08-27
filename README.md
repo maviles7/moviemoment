@@ -3,7 +3,7 @@ This is a movie tracking web application inspired by a friend who watched over 3
 
 # Screenshot
 
-![screenshot of Movie Moment]()
+![screenshot of Movie Moment](https://i.imgur.com/Xbu9ecY.png)
 
 
 # Technologies Used

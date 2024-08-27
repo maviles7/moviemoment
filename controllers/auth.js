@@ -30,7 +30,7 @@ router.post('/sign-up', async (req, res) => {
 // POST /auth/login (login user)
 router.post('/login', async (req, res) => {
   try {
-    const user = await User.findOne({username: req.body.username});
+    const user = await User.findOne({email: req.body.email});
     if (!user) {
       return res.redirect('/auth/login');
     }
