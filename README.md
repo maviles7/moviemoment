@@ -1,10 +1,9 @@
 # <MovieMoment>
-A movie traking app. This was inspired by a friend you watched a little over 300 movies in 1 year who only used his notes app to track the movies and his thoughts on them. I'm also a somewhat avid user of Belli, an app that helps you track restuarants, and StoryGraph, an app that lets you track books. And, while eating and reading are two of my favorite hobbies, watching movies is probably my favorite hobby. 
+This is a movie tracking web application inspired by a friend who watched over 300 movies in a single year, using only a notes app to keep track of the movies and his thoughts. I'm also a frequent user of Belli, an app for tracking restaurants visited, and StoryGraph, which helps you track books read. While dining and reading are two of my favorite hobbies, watching movies is likely my top passion. Hence, I wanted to make something to help track. 
 
 # Screenshot
 
-![screenshot of Movie Moment](https://i.imgur.com/67Zew6x.png)
-
+![screenshot of Movie Moment]()
 
 
 # Technologies Used
@@ -24,8 +23,8 @@ A movie traking app. This was inspired by a friend you watched a little over 300
 # Getting Started
 
 - [Click to view Planning](https://trello.com/b/PuCRQTp4/movie-moment)
-- [Link to GitHub Repo]()
-- [Click to Log-in/Sign-Up to Movie Moment!](https://maviles7.github.io/riddles_L1/)
+- [Link to GitHub Repo](https://github.com/maviles7/moviemoment.git)
+- [Click to Log-in/Sign-Up to Movie Moment!](https://moviemoment-29fea78bd2db.herokuapp.com/)
 
 # Next Steps
 

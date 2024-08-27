@@ -8,6 +8,7 @@ const movieSchema = new Schema ({
     }, 
     dateWatched: {
         type: Date,
+        required: true,
     }, 
     genre: {
         type: String, 

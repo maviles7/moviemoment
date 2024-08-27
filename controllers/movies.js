@@ -39,7 +39,7 @@ router.get('/:movieId/edit', async (req, res) => {
 // POST /movies --> CREATE FUNCTIONALITY 
 router.post('/', async (req, res) => {
   try {
-    req.body.dateWatched += 'T00:00'; // prevent 1 day off error  --- Q: why does code break w/o this?
+    req.body.dateWatched += 'T00:00'; // prevent 1 day off error 
     req.body.viewer = req.user._id;
     await Movie.create(req.body);
   } catch (error) {
