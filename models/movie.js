@@ -21,7 +21,7 @@ const movieSchema = new Schema ({
     review: {
         type: String,
     }, 
-    viewer: {
+    viewer: { 
         // referenceing the User
         type: Schema.Types.ObjectId,
         ref: 'User',

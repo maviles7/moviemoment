@@ -9,10 +9,18 @@ const User = require('../models/user');
 
 // GET /profiles --> INDEX FUNCTIONALITY 
 router.get('/', ensureLoggedIn, async (req, res) => {
-    //res.send('list of profiles go here');
     const profiles = await User.find({});
     console.log(profiles);
     res.render('profiles/index.ejs', { profiles });
 });
+
+
+// GET /profiles/:profileId --> SHOW FUNCTIONALITY 
+router.get('/:profileId', ensureLoggedIn, async (req, res) => {
+    const profiles = await User.find({});
+    const movies = await Movie.find({viewer: req.params.profileId});
+    console.log(movies);
+    res.render('profiles/show.ejs', { profiles, movies });
+}); 
 
 module.exports = router;

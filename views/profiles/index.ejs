@@ -5,7 +5,7 @@
 <ul>
     <% profiles.forEach((profile) => { %>
         <li>
-            <%= profile.username %></a>
+            <a href="/profiles/<%= profile._id %>"> <%= profile.username %></a>
         </li>
     <% })%>
 </ul>

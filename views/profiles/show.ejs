@@ -1,0 +1,16 @@
+<%- include('../partials/header.ejs') %>
+
+
+<h1 class="fancyfont"><%= user.username %>'s watchlist:</h1>
+
+<ul>
+    <% movies.forEach((movie) => { %>
+        <li>
+            <%= movie.movieTitle %>
+        </li>
+    <% })%>
+</ul>
+
+   
+
+<%- include('../partials/footer.ejs') %>
