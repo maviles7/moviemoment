@@ -1,20 +1,21 @@
 <%- include('../partials/header.ejs') %>
 
-<h1 class="fancyfont">My Movies</h1>
+    <h1 class="fancyfont">My Movies</h1>
 
 
 
-<% if (movies.length) { %>
-    
-        <% movies.forEach((movie) => { %>
+    <% if (movies.length) { %>
+
+        <% movies.forEach((movie)=> { %>
             <p>
-                <a href="/movies/<%= movie._id %>"><%= movie.movieTitle %></a>
+                <a href="/movies/<%= movie._id %>">
+                    <%= movie.movieTitle %>
+                </a>
             </p>
-        <% })%>
-    
-    <% } else { %>
-        <p>no movies watched, yet.</p>
-    <% } %>
+            <% })%>
 
-<%- include('../partials/footer.ejs') %>
+                <% } else { %>
+                    <p>no movies watched, yet.</p>
+                    <% } %>
 
+                        <%- include('../partials/footer.ejs') %>

@@ -8,7 +8,7 @@ const Movie = require('../models/movie');
 
 // GET /movies --> INDEX FUNCTIONALITY
 router.get('/', ensureLoggedIn, async (req, res) => {
-  const movies = await Movie.find({viewer: req.user._id}).populate('viewer');
+  const movies = await Movie.find({ viewer: req.user._id }).populate('viewer');
   res.render('movies/index.ejs', { movies });
 });
 
@@ -30,7 +30,7 @@ router.get('/:movieId/edit', async (req, res) => {
   const movie = await Movie.findById(req.params.movieId);
   const genres = Movie.schema.path('genre').enumValues
   const ratings = Movie.schema.path('rating').enumValues
-  const dateWatched = new Date(movie.dateWatched).toISOString().slice(0,10);
+  const dateWatched = new Date(movie.dateWatched).toISOString().slice(0, 10);
   console.log(movie)
   console.log(dateWatched);
   res.render('movies/edit.ejs', { movie, genres, ratings, dateWatched });
@@ -56,7 +56,7 @@ router.delete('/:movieId', async (req, res) => {
 
 // UPDATE /movies/:movieId --> UPDATE FUNCTIONALITY 
 router.put('/:movieId', async (req, res) => {
-  const updateMovie = await Movie.findByIdAndUpdate({_id: req.params.movieId}, req.body, {new: true});
+  const updateMovie = await Movie.findByIdAndUpdate({ _id: req.params.movieId }, req.body, { new: true });
   res.redirect(`/movies/${updateMovie._id}`);
 });
 

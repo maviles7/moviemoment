@@ -1,25 +1,25 @@
 <%- include('./partials/header.ejs') %>
 
-<h1 class ="fancyfont">Movie Moment</h1>
+    <h1 class="fancyfont">Movie Moment</h1>
 
-<% if (user) { %>
-    
-    <div>
-        <a href="/movies" class ="fancyfont">My Movies</a>
-        <a href="/movies/new" class ="fancyfont">Add Movie</a>
-    </div>
+    <% if (user) { %>
 
-<% } else { %>
+        <div>
+            <a href="/movies" class="fancyfont">My Movies</a>
+            <a href="/movies/new" class="fancyfont">Add Movie</a>
+        </div>
 
-    <h3>Your movie tracking app.</h3>
-        <h4>Get started today!</h4>
+        <% } else { %>
 
-    <div>
-        <a href="/auth/sign-up" class ="fancyfont">SIGN UP</a>
-        <a href="/auth/login" class ="fancyfont">LOG IN</a>
-    </div>
+            <h3>Your movie tracking app.</h3>
+            <h4>Get started today!</h4>
 
-<% } %>
+            <div>
+                <a href="/auth/sign-up" class="fancyfont">SIGN UP</a>
+                <a href="/auth/login" class="fancyfont">LOG IN</a>
+            </div>
+
+            <% } %>
 
 
-<%- include('./partials/footer.ejs') %>
+                <%- include('./partials/footer.ejs') %>

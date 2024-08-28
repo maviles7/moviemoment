@@ -1,39 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300&family=Monoton&display=swap');
 
-* {
+*
+{
   box-sizing: border-box;
   background-color: white;
   color: rgb(204, 67, 67);
   font-family: 'Moderustic';
 }
 
-body {
+body
+{
   margin: 0;
   height: 100vh;
   display: grid;
   grid-template-rows: 8vh 1fr 4vh;
 }
 
-.fancyfont {
+.fancyfont
+{
   font-family: 'Monoton';
   text-shadow: 2px 2px 2px goldenrod;
 }
 
-.bold {
+.showbox
+{
   font-weight: 900;
+  text-shadow: 1px 1px 1px goldenrod;;
 }
 
-a {
+a
+{
   text-decoration: none;
   padding: 1vmin;
   border-radius: 1vmin;
-  &:hover {
+
+  &:hover
+  {
     background-color: rgb(204, 67, 67);
     color: white;
-}
+  }
 }
 
-footer {
+footer
+{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,7 +50,8 @@ footer {
   color: rgb(204, 67, 67);
 }
 
-nav {
+nav
+{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -50,65 +60,88 @@ nav {
   color: rgb(204, 67, 67);
 }
 
-nav span {
+nav span
+{
   font-size: 1.5vmin;
   color: rgb(204, 67, 67);
 }
 
-#logout {
+#logout
+{
   flex-wrap: wrap;
 }
 
-main {
+main
+{
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 5vmin;
 }
 
-li {
+li
+{
   padding: 1.5vh;
 }
 
-input, select, textarea {
+input,
+select,
+textarea
+{
   border-color: rgb(204, 67, 67);
 }
 
-.showpage {
-  display: flex;
+.show
+{
+  display: grid;
+  grid-template-columns: 50vmin 50vmin;
+  gap: 1vmin;
+  text-align: center;
 }
 
-#edit {
-  margin-right: 3vh;
+.showpage
+{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2vmin;
+  place-content: center;
+  margin: auto;
 }
 
-form {
+form
+{
   display: grid;
   grid-template-columns: auto auto;
   gap: 2vmin;
 }
 
-form * {
+form *
+{
   font-size: 2vmin;
   padding: 1vmin;
   border-radius: 1vmin;
 }
 
-button {
+button
+{
   color: white;
   background-color: rgb(204, 67, 67);
   border-color: rgb(204, 67, 67);
 }
-button:hover {
+
+button:hover
+{
   background-color: rgb(204, 67, 67);
   border-color: rgb(204, 67, 67);
   color: white;
 }
 
-form > button[type="submit"] {
+form>button[type="submit"]
+{
   grid-column: 2;
 }
 
-::-webkit-calendar-picker-indicator {
+::-webkit-calendar-picker-indicator
+{
   color: rgb(204, 67, 67);
 }

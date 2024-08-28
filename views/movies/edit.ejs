@@ -1,36 +1,44 @@
 <%- include('../partials/header.ejs') %>
 
-<h1 class="fancyfont">Edit Movie: <%= movie.movieTitle %></h1>
+    <h1 class="fancyfont">Edit Movie: <%= movie.movieTitle %>
+    </h1>
 
-<form action="/movies/<%= movie._id %>?_method=PUT" method="POST">
+    <form action="/movies/<%= movie._id %>?_method=PUT" method="POST">
 
-    <label for="movie-title">Movie Title:</label>
-    <input type="text" name="movieTitle" id="movie-title" value="<%= movie.movieTitle %>"/>
+        <label for="movie-title">Movie Title:</label>
+        <input type="text" name="movieTitle" id="movie-title" value="<%= movie.movieTitle %>" />
 
-    <label for="date-watched">Date Watched:</label>
-    <input type="date" name="dateWatched" id="date-watched" value="<%= dateWatched %>"/>
+        <label for="date-watched">Date Watched:</label>
+        <input type="date" name="dateWatched" id="date-watched" value="<%= dateWatched %>" />
 
-    <label for="genre">Genre:</label>
-    <select name="genre" id="genre">
-        <option value="<%= movie.genre %> selected"><%= movie.genre %></option>
-        <% genres.forEach((genre) => { %>
-            <option value="<%= genre %>"><%= genre %></option>
-        <% }) %>
-    </select>
+        <label for="genre">Genre:</label>
+        <select name="genre" id="genre">
+            <option value="<%= movie.genre %> selected">
+                <%= movie.genre %>
+            </option>
+            <% genres.forEach((genre)=> { %>
+                <option value="<%= genre %>">
+                    <%= genre %>
+                </option>
+                <% }) %>
+        </select>
 
-    <label for="rating">Rating:</label>
-    <select name="rating">
-        <option value="<%= movie.rating %>" selected><%= movie.rating %></option>
-        <% ratings.forEach((rating) => { %>
-            <option value="<%= rating %>"><%=rating %></option>
-        <% }) %>
-    </select>
+        <label for="rating">Rating:</label>
+        <select name="rating">
+            <option value="<%= movie.rating %>" selected>
+                <%= movie.rating %>
+            </option>
+            <% ratings.forEach((rating)=> { %>
+                <option value="<%= rating %>">
+                    <%=rating %>
+                </option>
+                <% }) %>
+        </select>
 
-    <label for="review">Review:</label>
-    <textarea name="review" id="review" value="<%= movie.review %>"></textarea>
+        <label for="review">Review:</label>
+        <textarea name="review" id="review" value="<%= movie.review %>"></textarea>
 
-    <button type="submit" class="fancyfont">update movie!</button>
-</form>
+        <button type="submit" class="fancyfont">update movie!</button>
+    </form>
 
-<%- include('../partials/footer.ejs') %>
-
+    <%- include('../partials/footer.ejs') %>

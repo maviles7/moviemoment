@@ -1,36 +1,39 @@
 <%- include('../partials/header.ejs') %>
 
-<h1 class="fancyfont">Add Movie</h1>
+    <h1 class="fancyfont">Add Movie</h1>
 
-<form action="/movies" method="POST">
+    <form action="/movies" method="POST">
 
-    <label for="movie-title">Movie Title:</label>
-    <input type="text" required name="movieTitle" id="movie-title"/>
+        <label for="movie-title">Movie Title:</label>
+        <input type="text" required name="movieTitle" id="movie-title" />
 
-    <label for="date-watched">Date Watched:</label>
-    <input type="date" required name="dateWatched" id="date-watched"/>
+        <label for="date-watched">Date Watched:</label>
+        <input type="date" required name="dateWatched" id="date-watched" />
 
-    <label for="genre">Genre:</label>
-    <select name="genre" id="genre">
-        <option disabled selected value>select genre</option>
-        <% genres.forEach((genre) => { %>
-            <option value="<%= genre %>"><%= genre %></option>
-        <% }) %>
-    </select>
+        <label for="genre">Genre:</label>
+        <select name="genre" id="genre">
+            <option disabled selected value>select genre</option>
+            <% genres.forEach((genre)=> { %>
+                <option value="<%= genre %>">
+                    <%= genre %>
+                </option>
+                <% }) %>
+        </select>
 
-    <label for="rating">Rating:</label>
-    <select required name="rating">
-        <option disabled selected value>select rating</option>
-        <% ratings.forEach((rating) => { %>
-            <option value="<%= rating %>"><%= rating %></option>
-        <% }) %>
-    </select>
+        <label for="rating">Rating:</label>
+        <select required name="rating">
+            <option disabled selected value>select rating</option>
+            <% ratings.forEach((rating)=> { %>
+                <option value="<%= rating %>">
+                    <%= rating %>
+                </option>
+                <% }) %>
+        </select>
 
-    <label for="review">Review:</label>
-    <textarea name="review" id="review"></textarea>
+        <label for="review">Review:</label>
+        <textarea name="review" id="review"></textarea>
 
-    <button type="submit" class="fancyfont">Add Movie!</button>
-</form>
+        <button type="submit" class="fancyfont">Add Movie!</button>
+    </form>
 
-<%- include('../partials/footer.ejs') %>
-
+    <%- include('../partials/footer.ejs') %>

@@ -1,21 +1,19 @@
 <%- include('../partials/header.ejs') %>
 
 
-<h1 class="fancyfont"><%= user.username %>'s watchlist:</h1>
+    <h1 class="fancyfont">
+        <%= user.username %>'s watchlist:
+    </h1>
 
-<% if (movies.length) { %>
-    <ul>
-        <% movies.forEach((movie) => { %>
-            <li>
+    <% if (movies.length) { %>
+        <% movies.forEach((movie)=> { %>
+            <p>
                 <%= movie.movieTitle %> &nbsp;&nbsp; <%= movie.rating %>
-            </li>
-        <% })%>
-    </ul>
-<% } else { %>
-    <p>no movies watched, yet.</p>
-<% } %>
+            </p>
+            <% })%>
+                <% } else { %>
+                    <p>no movies watched, yet.</p>
+                    <% } %>
 
 
-<%- include('../partials/footer.ejs') %>
-
-   
+                        <%- include('../partials/footer.ejs') %>

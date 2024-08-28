@@ -1,29 +1,50 @@
 <%- include('../partials/header.ejs') %>
 
-<!-- SHOW  -->
-<h1 class="fancyfont"><%= movie.movieTitle %></h1>
-    <h3>my rating: <%= movie.rating %></h3>
-        <ul>
-            <% if (movie.dateWatched) { %>
-                <li><span class="bold">date watched → </span><%= movie.dateWatched.toLocaleDateString() %></li>
-            <% } %>
-            <% if (movie.genre) { %>
-                <li><span class="bold">genre → </span><%= movie.genre %></li>
-            <% } %>
-            <% if (movie.review) { %>
-                <li><span class="bold">my review → </span><%= movie.review %></li>
-            <% } %>
-        </ul>
+    <!-- SHOW  -->
+    <h1 class="fancyfont">
+        <%= movie.movieTitle %>
+    </h1>
+    <h3>my rating: <%= movie.rating %>
+    </h3>
 
-<div class="showpage">
-    <!-- EDIT -->
+    <div class="show">
+        
+            <% if (movie.dateWatched) { %>
+                <p class="showbox">date watched:</p>
+                <p>
+                    <%= movie.dateWatched.toLocaleDateString() %>
+                </p>
+                <% } %>
+       
+    
+
+    
+            <% if (movie.genre) { %>
+                <p class="showbox">genre:</p>
+                <p>
+                    <%= movie.genre %>
+                </p>
+                <% } %>
+        
+
+        
+            <% if (movie.review) { %>
+                <p class="showbox">my review:</p>
+                <p>
+                    <%= movie.review %>
+                </p>
+                <% } %>
+       
+    </div>
+ 
+    <div class="showpage">
+        <!-- EDIT -->
         <a href="/movies/<%= movie._id %>/edit" class="fancyfont" id="edit">Edit Movie</a>
-    <!-- DELETE -->
+        <!-- DELETE -->
         <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
             <button class="fancyfont" id="deletebtn">delete movie.</button>
         </form>
-</div>
+    </div>
 
 
-<%- include('../partials/footer.ejs') %>
-
+    <%- include('../partials/footer.ejs') %>

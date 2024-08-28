@@ -18,9 +18,9 @@ router.get('/', ensureLoggedIn, async (req, res) => {
 // GET /profiles/:profileId --> SHOW FUNCTIONALITY 
 router.get('/:profileId', ensureLoggedIn, async (req, res) => {
     const profiles = await User.find({});
-    const movies = await Movie.find({viewer: req.params.profileId});
+    const movies = await Movie.find({ viewer: req.params.profileId });
     console.log(movies);
     res.render('profiles/show.ejs', { profiles, movies });
-}); 
+});
 
 module.exports = router;

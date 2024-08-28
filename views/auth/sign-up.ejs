@@ -1,23 +1,23 @@
 <%- include('../partials/header.ejs') %>
 
-<h1 class="fancyfont">Sign Up!</h1>
-<form action="/auth/sign-up" method="POST">
+  <h1 class="fancyfont">Sign Up!</h1>
+  <form action="/auth/sign-up" method="POST">
 
-  <label for="email">Email:</label>
-  <input type="text" required name="email" id="email" />
+    <label for="email">Email:</label>
+    <input type="text" required name="email" id="email" />
 
-  <label for="username">Username:</label>
-  <input type="text" required name="username" id="username" />
+    <label for="username">Username:</label>
+    <input type="text" required name="username" id="username" />
 
-  <label for="password">Password:</label>
-  <input type="password" required name="password" id="password" />
+    <label for="password">Password:</label>
+    <input type="password" required name="password" id="password" />
 
-  <label for="confirmPassword">Confirm Password:</label>
-  <input type="password" required name="confirmPassword" id="confirmPassword" />
+    <label for="confirmPassword">Confirm Password:</label>
+    <input type="password" required name="confirmPassword" id="confirmPassword" />
 
-  <br>
+    <br>
 
-  <button type="submit" class="fancyfont">Sign up</button>
-</form>
+    <button type="submit" class="fancyfont">Sign up</button>
+  </form>
 
-<%- include('../partials/footer.ejs') %>
+  <%- include('../partials/footer.ejs') %>

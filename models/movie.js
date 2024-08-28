@@ -1,32 +1,32 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema; 
+const Schema = mongoose.Schema;
 
-const movieSchema = new Schema ({
+const movieSchema = new Schema({
     movieTitle: {
-        type: String, 
-        required: true, 
-    }, 
+        type: String,
+        required: true,
+    },
     dateWatched: {
         type: Date,
         required: true,
-    }, 
+    },
     genre: {
-        type: String, 
+        type: String,
         enum: ['action', 'adventure', 'animated', 'comedy', 'drama', 'documentary', 'historical', 'horror', 'musical', 'romance', 'thriller']
-    }, 
+    },
     rating: {
-        type: String, 
+        type: String,
         enum: ['✰', '✰✰', '✰✰✰', '✰✰✰✰', '✰✰✰✰✰'],
         required: true,
     },
     review: {
         type: String,
-    }, 
-    viewer: { 
+    },
+    viewer: {
         // referenceing the User
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true, 
+        required: true,
     },
 });
 

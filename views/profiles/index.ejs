@@ -1,14 +1,13 @@
 <%- include('../partials/header.ejs') %>
 
-<h1 class="fancyfont">who is watching what</h1>
+    <h1 class="fancyfont">who is watching what</h1>
 
-<ul>
-    <% profiles.forEach((profile) => { %>
-        <li>
-            <a href="/profiles/<%= profile._id %>"> <%= profile.username %></a>
-        </li>
-    <% })%>
-</ul>
 
-<%- include('../partials/footer.ejs') %>
+    <% profiles.forEach((profile)=> { %>
+        <p><a href="/profiles/<%= profile._id %>">
+                <%= profile.username %>
+            </a></p>
+        <% })%>
 
+
+            <%- include('../partials/footer.ejs') %>
