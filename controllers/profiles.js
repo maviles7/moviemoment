@@ -14,7 +14,6 @@ router.get('/', ensureLoggedIn, async (req, res) => {
     res.render('profiles/index.ejs', { profiles });
 });
 
-
 // GET /profiles/:profileId --> SHOW FUNCTIONALITY 
 router.get('/:profileId', ensureLoggedIn, async (req, res) => {
     const profiles = await User.find({});

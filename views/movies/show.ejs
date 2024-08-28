@@ -8,35 +8,30 @@
     </h3>
 
     <div class="show">
-        
-            <% if (movie.dateWatched) { %>
-                <p class="showbox">date watched:</p>
-                <p>
-                    <%= movie.dateWatched.toLocaleDateString() %>
-                </p>
-                <% } %>
-       
-    
 
-    
-            <% if (movie.genre) { %>
-                <p class="showbox">genre:</p>
-                <p>
-                    <%= movie.genre %>
-                </p>
-                <% } %>
-        
+        <% if (movie.dateWatched) { %>
+            <p class="showbox">date watched:</p>
+            <p>
+                <%= movie.dateWatched.toLocaleDateString() %>
+            </p>
+            <% } %>
 
-        
-            <% if (movie.review) { %>
-                <p class="showbox">my review:</p>
-                <p>
-                    <%= movie.review %>
-                </p>
-                <% } %>
-       
+                <% if (movie.genre) { %>
+                    <p class="showbox">genre:</p>
+                    <p>
+                        <%= movie.genre %>
+                    </p>
+                    <% } %>
+
+                        <% if (movie.review) { %>
+                            <p class="showbox">my review:</p>
+                            <p>
+                                <%= movie.review %>
+                            </p>
+                            <% } %>
+
     </div>
- 
+
     <div class="showpage">
         <!-- EDIT -->
         <a href="/movies/<%= movie._id %>/edit" class="fancyfont" id="edit">Edit Movie</a>

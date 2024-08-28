@@ -17,8 +17,7 @@ mongoose.connection.on("connected", () => {
 app.use(morgan('dev'));
 // Serves static assets to the browser
 app.use(express.static('public'));
-// Middleware to parse URL-encoded data from forms
-// express.urlencoded is what creates req.body
+// Middleware to parse URL-encoded data from forms express.urlencoded is what creates req.body
 app.use(express.urlencoded({ extended: false }));
 // Middleware for using HTTP verbs such as PUT or DELETE
 app.use(methodOverride("_method"));
@@ -38,8 +37,7 @@ app.use(addUserToReqAndLocals);
 
 const ensureLoggedIn = require('./middleware/ensureLoggedIn');
 
-// '/auth' is a "starts with" path that all paths
-// within authCtrl are appended to
+// '/auth' is a "starts with" path that all paths within authCtrl are appended to
 app.use('/auth', require('./controllers/auth'));
 app.use('/movies', ensureLoggedIn, require('./controllers/movies'));
 app.use('/profiles', ensureLoggedIn, require('./controllers/profiles'));
@@ -53,8 +51,6 @@ app.get('/', async (req, res) => {
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : "3000";
-// An alternative to above
-// const port = process.env.PORT || "3000";
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);

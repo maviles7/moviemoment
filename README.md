@@ -1,5 +1,6 @@
-# <MovieMoment>
-This is a movie tracking web application inspired by a friend who watched over 300 movies in a single year, using only a notes app to keep track of the movies and his thoughts. I'm also a frequent user of Belli, an app for tracking restaurants visited, and StoryGraph, which helps you track books read. While dining and reading are two of my favorite hobbies, watching movies is likely my top passion. Hence, I wanted to make something to help track. 
+# MovieMoment
+
+This is a movie tracking web application inspired by an acquaintance who watched over 300 movies in a single year, using only a notes app to keep track of the movies and his thoughts. I'm also a frequent user of Belli, an app for tracking restaurants visited, and StoryGraph, which helps you track books read. While dining and reading are two of my favorite hobbies, watching movies is likely my top passion. Hence, I wanted to make something to help track. 
 
 # Screenshot
 
